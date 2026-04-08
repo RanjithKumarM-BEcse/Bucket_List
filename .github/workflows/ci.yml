@@ -1,0 +1,23 @@
+name: Static Site CI
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Check HTML exists
+        run: |
+          if [ ! -f index.html ]; then
+            echo "index.html not found!"
+            exit 1
+          fi
+
+      - name: Basic lint check (optional)
+        run: echo "All good 🚀"

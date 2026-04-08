@@ -35,7 +35,7 @@ body {
     width: 100%;
     height: 100%;
     background: radial-gradient(circle at 0% 0%, rgba(102, 126, 234, 0.08), transparent 40%),
-                radial-gradient(circle at 100% 100%, rgba(118, 75, 162, 0.08), transparent 40%);
+        radial-gradient(circle at 100% 100%, rgba(118, 75, 162, 0.08), transparent 40%);
     z-index: -1;
 }
 
@@ -115,7 +115,7 @@ body {
 
 .search-wrapper svg {
     position: absolute;
-    left: 1.25rem;
+    left: 1rem;
     top: 50%;
     transform: translateY(-50%);
     width: 20px;
@@ -125,7 +125,7 @@ body {
 
 .search-wrapper input {
     width: 100%;
-    padding: 0.8rem 1rem 0.8rem 3.2rem;
+    padding: 0.8rem 1rem 0.8rem 3rem;
     background: white;
     border: 1px solid rgba(0, 0, 0, 0.05);
     border-radius: 12px;
@@ -157,8 +157,9 @@ body {
 
 .title-meta-group {
     display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.75rem;
 }
 
 .task-title {
@@ -203,8 +204,9 @@ body {
 
 /* Card Menu */
 .card-menu-container {
-    position: relative;
-    margin-left: 0.5rem;
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
 }
 
 .menu-dots-btn {
@@ -313,8 +315,15 @@ body {
 }
 
 @keyframes slideIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .task-card:hover {
@@ -352,11 +361,11 @@ body {
     transition: all 0.2s var(--transition);
 }
 
-.checkbox-container:hover input ~ .checkmark {
+.checkbox-container:hover input~.checkmark {
     border-color: var(--primary-light);
 }
 
-.checkbox-container input:checked ~ .checkmark {
+.checkbox-container input:checked~.checkmark {
     background: var(--gradient);
     border-color: transparent;
 }
@@ -374,7 +383,7 @@ body {
     transform: rotate(45deg);
 }
 
-.checkbox-container input:checked ~ .checkmark:after {
+.checkbox-container input:checked~.checkmark:after {
     display: block;
 }
 
@@ -431,9 +440,20 @@ body {
     letter-spacing: 0.5px;
 }
 
-.priority-high { background: #fee2e2; color: #ef4444; }
-.priority-medium { background: #e0e7ff; color: #6366f1; }
-.priority-low { background: #f1f5f9; color: #64748b; }
+.priority-high {
+    background: #fee2e2;
+    color: #ef4444;
+}
+
+.priority-medium {
+    background: #e0e7ff;
+    color: #6366f1;
+}
+
+.priority-low {
+    background: #f1f5f9;
+    color: #64748b;
+}
 
 .category-tag {
     background: #f0fdf4;
@@ -611,7 +631,9 @@ select {
     cursor: pointer;
 }
 
-input[type="text"], input[type="date"], textarea {
+input[type="text"],
+input[type="date"],
+textarea {
     width: 100%;
     background: #f8fafc;
     border: 2px solid #f1f5f9;
@@ -623,7 +645,8 @@ input[type="text"], input[type="date"], textarea {
     transition: all 0.3s;
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
     border-color: var(--primary-light);
 }
 
@@ -664,7 +687,18 @@ input:focus, textarea:focus {
 
 /* Responsive */
 @media (max-width: 480px) {
-    .app-title { font-size: 2rem; }
-    .fab { bottom: 1.5rem; right: 1.5rem; width: 50px; height: 50px; }
-    .modal-content { padding: 1.5rem; }
+    .app-title {
+        font-size: 2rem;
+    }
+
+    .fab {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 50px;
+        height: 50px;
+    }
+
+    .modal-content {
+        padding: 1.5rem;
+    }
 }

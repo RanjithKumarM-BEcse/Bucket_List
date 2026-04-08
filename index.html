@@ -24,6 +24,31 @@
                 <button class="filter-btn" data-filter="upcoming">Upcoming</button>
                 <button class="filter-btn" data-filter="completed">Completed</button>
             </div>
+
+            <div class="search-sort-container">
+                <div class="search-wrapper">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input type="text" id="search-input" placeholder="Search your goals...">
+                </div>
+                <div class="header-controls">
+                    <select id="sort-select" class="control-select">
+                        <option value="date-new">Newest First</option>
+                        <option value="priority-high">Priority: High to Low</option>
+                        <option value="date-old">Oldest First</option>
+                    </select>
+                    <select id="category-filter" class="control-select">
+                        <option value="all">All Categories</option>
+                        <option value="Personal">Personal</option>
+                        <option value="Career">Career</option>
+                        <option value="Travel">Travel</option>
+                        <option value="Health">Health</option>
+                        <option value="Financial">Financial</option>
+                    </select>
+                </div>
+            </div>
         </header>
 
         <main class="task-section">
@@ -63,8 +88,28 @@
                     <label for="task-desc">Description (Optional)</label>
                     <textarea id="task-desc" rows="3" placeholder="Add some details..."></textarea>
                 </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="task-priority">Priority</label>
+                        <select id="task-priority">
+                            <option value="low">Low</option>
+                            <option value="medium" selected>Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="task-category">Category</label>
+                        <select id="task-category">
+                            <option value="Personal">Personal</option>
+                            <option value="Career">Career</option>
+                            <option value="Travel">Travel</option>
+                            <option value="Health">Health</option>
+                            <option value="Financial">Financial</option>
+                        </select>
+                    </div>
+                </div>
                 <div class="form-group">
-                    <label for="task-date">When?</label>
+                    <label for="task-date">Target Date</label>
                     <input type="date" id="task-date" required>
                 </div>
                 <button type="submit" class="submit-btn">Add to List</button>

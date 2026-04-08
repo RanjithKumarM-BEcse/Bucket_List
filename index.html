@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Before I Die | Premium Bucket List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-gradient"></div>
+    
+    <div class="app-container">
+        <header class="app-header">
+            <h1 class="app-title">Before I Die ✨</h1>
+            <div class="filter-bar">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="today">Today</button>
+                <button class="filter-btn" data-filter="upcoming">Upcoming</button>
+                <button class="filter-btn" data-filter="completed">Completed</button>
+            </div>
+        </header>
+
+        <main class="task-section">
+            <div id="task-list" class="task-list">
+                <!-- Tasks will be injected here -->
+            </div>
+            
+            <div id="empty-state" class="empty-state hidden">
+                <div class="empty-icon">🌟</div>
+                <p>No tasks yet ✨ Start adding your goals!</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Floating Action Button -->
+    <button id="add-task-btn" class="fab" aria-label="Add Task">
+        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+    </button>
+
+    <!-- Modal for Adding Task -->
+    <div id="task-modal" class="modal-overlay hidden">
+        <div class="modal-content glass">
+            <header class="modal-header">
+                <h2>New Goal</h2>
+                <button id="close-modal" class="close-btn">&times;</button>
+            </header>
+            <form id="task-form">
+                <div class="form-group">
+                    <label for="task-title">What's on your mind?</label>
+                    <input type="text" id="task-title" placeholder="e.g. See the Northern Lights" required>
+                </div>
+                <div class="form-group">
+                    <label for="task-desc">Description (Optional)</label>
+                    <textarea id="task-desc" rows="3" placeholder="Add some details..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="task-date">When?</label>
+                    <input type="date" id="task-date" required>
+                </div>
+                <button type="submit" class="submit-btn">Add to List</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

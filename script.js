@@ -245,10 +245,7 @@ function renderTasks() {
                             <input type="checkbox" ${task.completed ? 'checked' : ''} onchange="toggleTask(${task.id})">
                             <span class="checkmark"></span>
                         </label>
-                        <div class="title-meta-group">
-                            <h3 class="task-title">${task.title}</h3>
-                            <span class="end-date">Target: ${dateString}</span>
-                        </div>
+                        <h3 class="task-title">${task.title}</h3>
                     </div>
                     <div class="card-menu-container">
                         <button class="menu-dots-btn" onclick="toggleTaskMenu(${task.id})" title="Actions">•••</button>
@@ -277,8 +274,12 @@ function renderTasks() {
                     <div class="tags-group">
                         <span class="priority-badge priority-${task.priority}">${task.priority}</span>
                         <span class="category-tag">${task.category}</span>
+                        <span class="created-at">Created: ${createdDate}</span>
+                        <div class="end-date">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                            Target: ${dateString}
+                        </div>
                     </div>
-                    <span class="created-at">Created: ${createdDate}</span>
                 </div>
             </div>
         `;

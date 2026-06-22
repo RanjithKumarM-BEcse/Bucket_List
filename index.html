@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Before I Die | A To-Do List</title>
+    <title>Before I Die | A Bucket List</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -21,7 +21,7 @@
                 <button class="filter-btn active" data-filter="all">All</button>
                 <button class="filter-btn" data-filter="today">Today</button>
                 <button class="filter-btn" data-filter="completed">Completed</button>
-                <button class="filter-btn" id="hidden-filter-btn" data-filter="hidden" title="View Hidden Tasks">
+                <button class="filter-btn" id="hidden-filter-btn" data-filter="hidden" title="View Hidden Goals">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                         style="width: 18px; height: 18px; vertical-align: middle;">
                         <circle cx="12" cy="12" r="1"></circle>
@@ -64,13 +64,13 @@
 
             <div id="empty-state" class="empty-state hidden">
                 <div class="empty-icon">🌟</div>
-                <p>No tasks yet ✨ Start adding your goals!</p>
+                <p>No goals yet ✨ Start adding your bucket list dreams!</p>
             </div>
         </main>
     </div>
 
     <!-- Floating Action Button -->
-    <button id="add-task-btn" class="fab" aria-label="Add Task">
+    <button id="add-task-btn" class="fab" aria-label="Add Goal">
         <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"
             stroke-linecap="round" stroke-linejoin="round">
             <line x1="12" y1="5" x2="12" y2="19"></line>
@@ -78,7 +78,7 @@
         </svg>
     </button>
 
-    <!-- Modal for Adding Task -->
+    <!-- Modal for Adding Goal -->
     <div id="task-modal" class="modal-overlay hidden">
         <div class="modal-content glass">
             <header class="modal-header">
@@ -88,7 +88,7 @@
             <form id="task-form">
                 <div class="form-group">
                     <label for="task-title">What's on your mind?</label>
-                    <input type="text" id="task-title" placeholder="e.g. See the Northern Lights" required>
+                    <input type="text" id="task-title" placeholder="e.g. learn a new skill" required>
                 </div>
                 <div class="form-group">
                     <label for="task-desc">Description (Optional)</label>
@@ -118,7 +118,7 @@
                     <label for="task-date">Target Date</label>
                     <input type="date" id="task-date" required>
                 </div>
-                <button type="submit" class="submit-btn">Add to List</button>
+                <button type="submit" class="submit-btn">Add Goal</button>
             </form>
         </div>
     </div>
